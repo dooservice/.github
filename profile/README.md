@@ -72,4 +72,4 @@ Don't want to operate it yourself? **[dooservice.sh](https://dooservice.sh)** is
 **API SERVICE SAC** is a Peruvian software company focused on Odoo development, integrations, and cloud infrastructure. dooservice is our internal tooling for managing Odoo environments at scale, now open to the community.
 
 - Website: [apiservicesac.com](https://apiservicesac.com)
-- Email: principal@apiservicesac.com
+- Email: soporte@apiservicesac.com

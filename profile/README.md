@@ -1,8 +1,8 @@
-# Dooservice
+# dooservice
 
 **Managed Odoo infrastructure — from development to production.**
 
-Dooservice is an open-source platform for teams building on Odoo. It handles provisioning, environment management, deployments, backups, and scaling so engineers can focus on building, not on infrastructure.
+dooservice is an open-source platform for teams building on Odoo. It handles provisioning, environment management, deployments, backups, and scaling so engineers can focus on building, not on infrastructure.
 
 Built and operated by **[API SERVICE SAC](https://apiservicesac.com)** — a software company based in Peru specializing in Odoo development and cloud infrastructure.
 
@@ -10,7 +10,7 @@ Built and operated by **[API SERVICE SAC](https://apiservicesac.com)** — a sof
 
 ## What it does
 
-Dooservice treats every Odoo project as a first-class deployment target. Each project gets:
+dooservice treats every Odoo project as a first-class deployment target. Each project gets:
 
 - A **production environment** with 2 Odoo workers, its own PostgreSQL database, and a dedicated domain
 - Unlimited **development environments** — isolated, neutralized clones ready for testing and staging
@@ -49,7 +49,7 @@ The orchestrator and agents communicate over [NATS](https://nats.io) using an en
 
 ## Self-hosted
 
-Dooservice is fully open source. You can run the entire stack on your own infrastructure:
+dooservice is fully open source. You can run the entire stack on your own infrastructure:
 
 ```
 orchestrator  →  your VPS or cloud VM
@@ -69,7 +69,7 @@ Don't want to operate it yourself? **[dooservice.sh](https://dooservice.sh)** is
 
 ## About API SERVICE SAC
 
-**API SERVICE SAC** is a Peruvian software company focused on Odoo development, integrations, and cloud infrastructure. Dooservice is our internal tooling for managing Odoo environments at scale, now open to the community.
+**API SERVICE SAC** is a Peruvian software company focused on Odoo development, integrations, and cloud infrastructure. dooservice is our internal tooling for managing Odoo environments at scale, now open to the community.
 
 - Website: [apiservicesac.com](https://apiservicesac.com)
 - Email: principal@apiservicesac.com

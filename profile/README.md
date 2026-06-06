@@ -32,7 +32,7 @@ The platform is composed of four open-source components:
 | [`core`](https://github.com/dooservice/core) | Shared SDK, domain models, transport layer, and agent–orchestrator protocol |
 | [`orchestrator`](https://github.com/dooservice/orchestrator) | Central API server — manages projects, users, jobs, and agent coordination |
 | [`agent`](https://github.com/dooservice/agent) | Daemon deployed on tenant servers — executes provisioning, deployment, and backup jobs |
-| [`dashboard`](https://github.com/dooservice/dashboard) | Web UI for managing projects and environments |
+| [`app-dooservice`](https://github.com/dooservice/app-dooservice) | Web UI for managing projects and environments |
 
 The orchestrator and agents communicate over [NATS](https://nats.io) using an encrypted, authenticated protocol. Jobs are dispatched asynchronously via JetStream and stream progress back to the dashboard in real time.
 

@@ -32,6 +32,7 @@ server unless you choose a remote backup.
 |---|---|---|
 | [docker-images](https://github.com/dooservice/docker-images) | The images every server runs: Odoo, the environment console, PostgreSQL | AGPL-3.0 |
 | [odoo-skills](https://github.com/dooservice/odoo-skills) | Agent skills for Odoo 16.0 to 20.0: Odoo's own skills, adapted and checked per version | LGPL-3.0 |
+| [gitd](https://github.com/dooservice/gitd) | Keeps the git repositories of a server: one copy per repository that every environment borrows from, over ConnectRPC | AGPL-3.0 |
 
 Issues and pull requests are welcome in each repository; read its `CONTRIBUTING.md` first.
 

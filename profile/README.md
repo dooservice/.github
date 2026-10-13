@@ -1,74 +1,53 @@
 # dooservice
 
-**Managed Odoo infrastructure — from development to production.**
+**Every Odoo you run, in one panel. On servers that stay yours.**
 
-dooservice is an open-source platform for teams building on Odoo. It handles provisioning, environment management, deployments, backups, and scaling so engineers can focus on building, not on infrastructure.
-
-Built and operated by **[API SERVICE SAC](https://apiservicesac.com)** — a software company based in Peru specializing in Odoo development and cloud infrastructure.
-
----
+dooservice is a control panel for Odoo 16.0 to 20.0. Connect a server (a VPS, a machine
+in your office, or one we create for you at Hetzner, DigitalOcean or Vultr) and run your
+Odoo projects on it: environments, deployments from GitHub, backups, domains, logs and
+alerts, from [dooservice.sh](https://dooservice.sh). Your databases never leave your
+server unless you choose a remote backup.
 
 ## What it does
 
-dooservice treats every Odoo project as a first-class deployment target. Each project gets:
+- **Environments in minutes**: production and development, each with its own database,
+  configuration and domain. Clone production to test, from now or from any full backup.
+- **Deploy from GitHub**: by push, submodules included; every deployment records its
+  commit and author, with a way back.
+- **Backups**: daily on your server, off it on a paid plan, plus a weekly immutable copy.
+  Restore in one click; a restore test runs every week.
+- **AI in the console**: Claude Code or opencode inside each environment, aware of its Odoo
+  version. Code leaves as a pull request; on production the AI changes data only through
+  Odoo and asks before each change.
+- **Alerts**: server down, backup failed, disk full or production stopped, when it
+  happens and when it clears.
+- **A team with permissions**: owner, admin, developer or viewer, each in their own
+  projects.
+- **Updates without surprises**: signed releases, rolled out in stages, inside each
+  server's maintenance window.
 
-- A **production environment** with 2 Odoo workers, its own PostgreSQL database, and a dedicated domain
-- Unlimited **development environments** — isolated, neutralized clones ready for testing and staging
-- **One-click deployments** triggered manually or automatically from GitHub pull request merges
-- **Backup and restore** — full database and filestore snapshots with point-in-time restore
-- **Worker scaling** — adjust production compute resources without downtime
-- **Custom domains** — bring your own domain with automatic SSL
+## Open source
 
-All environments are provisioned in real time through an agent-based architecture that runs close to the data.
+| Repository | What it is | License |
+|---|---|---|
+| [docker-images](https://github.com/dooservice/docker-images) | The images every server runs: Odoo, the environment console, PostgreSQL | AGPL-3.0 |
+| [odoo-skills](https://github.com/dooservice/odoo-skills) | Agent skills for Odoo 16.0 to 20.0: Odoo's own skills, adapted and checked per version | LGPL-3.0 |
 
----
+Issues and pull requests are welcome in each repository; read its `CONTRIBUTING.md` first.
 
-## Architecture
+## Get started
 
-The platform is composed of four open-source components:
+Create an account at **[dooservice.sh](https://dooservice.sh)**, connect a server with one
+command, and create your first project.
 
-| Repository | Role |
-|---|---|
-| [`core`](https://github.com/dooservice/core) | Shared SDK, domain models, transport layer, and agent–orchestrator protocol |
-| [`orchestrator`](https://github.com/dooservice/orchestrator) | Central API server — manages projects, users, jobs, and agent coordination |
-| [`agent`](https://github.com/dooservice/agent) | Daemon deployed on tenant servers — executes provisioning, deployment, and backup jobs |
-| [`app-dooservice`](https://github.com/dooservice/app-dooservice) | Web UI for managing projects and environments |
+## Security and contact
 
-The orchestrator and agents communicate over [NATS](https://nats.io) using an encrypted, authenticated protocol. Jobs are dispatched asynchronously via JetStream and stream progress back to the dashboard in real time.
-
----
-
-## Key integrations
-
-- **GitHub** — link a repository to a project, enable auto-deploy on push, and create isolated environment branches per PR
-- **Traefik** — automatic reverse proxy configuration and SSL for every environment
-- **Cloudflare** — DNS record management for custom and primary domains
-
----
-
-## Self-hosted
-
-dooservice is fully open source. You can run the entire stack on your own infrastructure:
-
-```
-orchestrator  →  your VPS or cloud VM
-agent(s)      →  one per region or tenant server
-app-dooservice →  static hosting or your own server
-```
-
-Documentation and deployment guides are available at **[dooservice.sh](https://dooservice.sh)**.
+Report vulnerabilities privately from the *Security* tab of the affected repository, or by
+email to [soporte@apiservicesac.com](mailto:soporte@apiservicesac.com) with «Security» in
+the subject. For anything else, write to the same address.
 
 ---
 
-## Hosted platform
-
-Don't want to operate it yourself? **[dooservice.sh](https://dooservice.sh)** is the managed version — sign up, create a project, and have a live Odoo environment running in minutes. Operated by API SERVICE SAC.
-
----
-
-## About API SERVICE SAC
-
-**API SERVICE SAC** is a Peruvian software company focused on Odoo development, integrations, and cloud infrastructure. dooservice is our internal tooling for managing Odoo environments at scale, now open to the community.
-
-- Website: [apiservicesac.com](https://apiservicesac.com)
-- Email: soporte@apiservicesac.com
+Made by **[API SERVICE SAC](https://apiservicesac.com)**, a software company in Peru that
+builds on Odoo. Odoo is a trademark of Odoo S.A.; dooservice is not affiliated with or
+endorsed by Odoo S.A.
